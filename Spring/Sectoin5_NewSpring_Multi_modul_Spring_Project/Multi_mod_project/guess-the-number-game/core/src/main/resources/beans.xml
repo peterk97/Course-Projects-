@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Configuring the container to create a bean for us ! -->
+        <bean id="numberGenerator" class="academy.learnprogramming.NumberGeneratorImpl"/>
+
+<!--   Adding a bean ID to the GameImpl class    -->
+<!--   We need to make some change in this bean using the const arg and "Ref" to specify the ID that is going to be injected in the container  -->
+        <bean id="game" class="academy.learnprogramming.GameImpl">
+                <constructor-arg ref="numberGenerator"/>
+        </bean>
+
+
+</beans>

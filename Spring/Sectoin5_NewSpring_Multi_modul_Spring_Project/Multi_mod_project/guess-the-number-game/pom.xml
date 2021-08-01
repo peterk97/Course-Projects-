@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>academy.learnprogramming</groupId>
+    <artifactId>guess-the-number-game</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- Here intelliJ automatically added a modules tag-->
+    <modules>
+        <module>core</module>
+    </modules>
+    <!--To convert this into a parent project (pom project) does not contain code it is just a project that specifies the modules
+               delete the source dir.
+               - we also need to specify the packaging type (pom) is a container of sub modules ! -->
+    <packaging>pom</packaging>
+
+<!--Maven properties instead of version numbers-->
+    <properties>
+        <logback.version>1.2.3</logback.version>
+        <spring.version>5.2.16.RELEASE</spring.version>
+        <java.version>11</java.version>
+    </properties>
+
+<!--Setting up the dependency management in the parent pom.xml-->
+    <dependencyManagement>
+        <dependencies>
+            <!-- Logging -->
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+
+            <!-- Spring Context -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+
+<!-- Config of the compiler plugin in parent so all modules will use the same -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+
+                <configuration>
+                    <target>${java.version}</target>
+                    <source>${java.version}</source>
+                    <release>${java.version}</release>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
+
+
+
+
+
+<!--Next step is to create a core module that represents the maven project (sub project of our guess the numbers game-->

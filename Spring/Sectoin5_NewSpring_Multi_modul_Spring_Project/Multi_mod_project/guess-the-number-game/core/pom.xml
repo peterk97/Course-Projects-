@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>guess-the-number-game</artifactId>
+        <groupId>academy.learnprogramming</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+<!--    Here we only have the model version and the artifactId everything else comes from the parent class-->
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>core</artifactId>
+
+<!-- add the dependencies from parent (version inherited) -->
+    <dependencies>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
+    </dependencies>
+
+
+</project>
+
+
+
+    <!--This is our created core module (Child of the guess-the-number)
+    we do not need a packaging tag because by default it is .jar file-->
